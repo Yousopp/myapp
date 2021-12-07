@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#lineChart {
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#pieChart {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+#titlePieChart {
+  padding: 20px;
+}
