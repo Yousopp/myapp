@@ -1,10 +1,10 @@
 import React from "react"
-import { Pie } from 'react-chartjs-2'
+import { Doughnut } from 'react-chartjs-2'
 
 const PieChart = () => {
     return (
         <div>
-            <Pie 
+            <Doughnut 
                 data={{
                     labels: ['BTC', 'ETH', 'BNB', 'USDT', 'SOL', 'CARD', 'Other'],
                     datasets: [
