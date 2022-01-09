@@ -1,17 +1,46 @@
-import React from 'react'
+import React, { useState, createRef } from 'react'
 
-import LineChart from './components/BarChart'
+import BarChart from './components/BarChart'
+import ButtonChart from './components/ButtonChart'
+import ButtonReset from './components/ButtonReset'
 import './App.css'
-import PieChart from './components/PieChart'
+import config from './configChart.json'
 
 const App = () => {
+
+  // Avoir accés au chart pour le manipuler
+  const chartRef = createRef()
+
+  // HOOK pour avoir (data = config) et (setData) qui sera la nouvelle donnée 
+  const [data, setData] = useState(JSON.parse(JSON.stringify(config)))
+
+  //Fonction ajouter une donnée
+  const updateChart = (value, ville) => {
+    const newData = data
+    newData.datasets[0].data.push(parseInt(value))
+    newData.labels.push(ville)
+    setData(newData)
+    chartRef.current.chartInstance.update({ // Update/Refresh le chart
+      preservation: true,
+    });
+  }
+
+  //Fonction reset du chart
+  const resetData = () => {
+    setData(JSON.parse(JSON.stringify(config)))
+    console.log(config)
+    chartRef.current.chartInstance.update({
+      preservation: true,
+    });
+  }
+
   return <div id="divChart">
             <div id="lineChart">
-              <LineChart />
+              <BarChart data={data} chartRef={chartRef}/>
             </div>
-            <div id="pieChart">
-              <p id="titlePieChart">Principaux actifs cryptographiques par pourcentage de la capitalisation boursière totale</p>
-              <PieChart />
+            <div>
+              <ButtonChart updateChart={updateChart}/>
+              <ButtonReset resetData={resetData}/>
             </div>
           </div>
 }
