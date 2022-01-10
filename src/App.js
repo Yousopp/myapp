@@ -36,9 +36,9 @@ const App = () => {
 
   return <div id="divChart">
             <div id="lineChart">
-              <BarChart data={data} chartRef={chartRef}/>
+              <BarChart data={data} chartRef={chartRef} />
             </div>
-            <div>
+            <div className="inputbox">
               <ButtonChart updateChart={updateChart}/>
               <ButtonReset resetData={resetData}/>
             </div>

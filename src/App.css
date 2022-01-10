@@ -7,15 +7,24 @@
   border: 1px solid rgb(207, 207, 207);
   border-radius: 25px;
   padding: 10px;
-  margin: 10px;
-}
-
-#pieChart {
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  height: auto;
+  width: 700px;
 }
 
 #titlePieChart {
   padding: 20px;
+}
+
+.inputbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.inputdata {
+  margin: 10px;
 }

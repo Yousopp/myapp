@@ -16,7 +16,7 @@ const ButtonChart = ({updateChart}) => {
 
     return (
         <div className="inputBox">
-            <input type="number" className="inputAdd" placeholder="Valeur" id="inputData" onChange={event => setValue(event.target.value)}/>
+            <input type="number" className="inputAdd" placeholder="Valeur" step="0.1" min="0" id="inputData" onChange={event => setValue(event.target.value)}/>
             <input type="text" className="inputAdd" placeholder="Ville" id="label" onChange={event => setVille(event.target.value)}/>
             <button onClick={addData} id="insertData">Ajouter une donnée</button>
         </div>
