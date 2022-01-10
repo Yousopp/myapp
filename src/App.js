@@ -17,7 +17,7 @@ const App = () => {
   //Fonction ajouter une donnée
   const updateChart = (value, ville) => {
     const newData = data
-    newData.datasets[0].data.push(parseInt(value))
+    newData.datasets[0].data.push(parseFloat(value))
     newData.labels.push(ville)
     setData(newData)
     chartRef.current.chartInstance.update({ // Update/Refresh le chart
