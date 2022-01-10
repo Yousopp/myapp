@@ -3,6 +3,7 @@ import React, { useState, createRef } from 'react'
 import BarChart from './components/BarChart'
 import ButtonChart from './components/ButtonChart'
 import ButtonReset from './components/ButtonReset'
+
 import './App.css'
 import config from './configChart.json'
 
