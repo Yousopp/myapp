@@ -9,15 +9,17 @@ const ButtonChart = ({updateChart}) => {
     
     const [value, setValue] = useState()
     const [ville, setVille] = useState()
+    const [color, setColor] = useState()
 
     const addData = () => {
-        updateChart(value, ville)
+        updateChart(value, ville, color)
     }
 
     return (
         <div className="inputBox">
             <input type="number" className="inputAdd" placeholder="Valeur" step="0.1" min="0" id="inputData" onChange={event => setValue(event.target.value)}/>
             <input type="text" className="inputAdd" placeholder="Ville" id="label" onChange={event => setVille(event.target.value)}/>
+            <input type="text" className="inputAdd" placeholder="Couleur" id="label" onChange={event => setColor(event.target.value)}/>
             <button onClick={addData} id="insertData">Ajouter une donnée</button>
         </div>
     )

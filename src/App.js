@@ -17,10 +17,11 @@ const App = () => {
   const [data, setData] = useState(JSON.parse(JSON.stringify(config)))
 
   //Fonction ajouter une donnée
-  const updateChart = (value, ville) => {
+  const updateChart = (value, ville, color) => {
     const newData = data
     newData.datasets[0].data.push(parseFloat(value))
     newData.labels.push(ville)
+    newData.datasets[0].backgroundColor.push(color) // Ajout de la donnée "color" pour le chart
     setData(newData)
     chartRef.current.chartInstance.update({ // Update/Refresh le chart
       preservation: true,
